@@ -33,38 +33,38 @@
         android:id="@+id/btn_sum"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="+" />
+        android:text="@string/plus" />
 
     <Button
         android:id="@+id/btn_rest"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="-" />
+        android:text="@string/minus" />
 
     <Button
         android:id="@+id/btn_multi"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="*" />
+        android:text="@string/multiplication" />
 
     <Button
         android:id="@+id/btn_div"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="/" />
+        android:text="@string/division" />
 
 
     <Button
         android:id="@+id/btn_clear"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="C" />
+        android:text="@string/clear" />
 
     <Button
         android:id="@+id/btn_equal"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="=" />
+        android:text="@string/equal" />
 </LinearLayout>
 
 
