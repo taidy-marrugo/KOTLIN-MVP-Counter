@@ -28,7 +28,7 @@ open class CountPresenter(model: CalculatorModel, view: CountView) {
                 }
             })
 
-            RxBus.subscribe(activity, object  : OnCalculatorEqualButtonPressedBusObserver() {
+            RxBus.subscribe(activity, object : OnCalculatorEqualButtonPressedBusObserver() {
                 override fun onEvent(value: OnCalculatorEqualButtonPressed) {
                     view.setExpression(model.getResult())
                 }
@@ -39,10 +39,7 @@ open class CountPresenter(model: CalculatorModel, view: CountView) {
                     model.clear()
                     view.clear()
                 }
-
             })
-
         }
     }
-
 }
