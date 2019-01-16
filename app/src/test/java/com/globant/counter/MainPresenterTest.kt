@@ -20,7 +20,7 @@ import org.mockito.Mockito.`when` as whenever
 class PresenterTest {
 
     private var presenter: CountPresenter? = null
-    private var model: CalculatorModel? = null
+    private lateinit var model: CalculatorModel
     @Mock
     lateinit var view: CountView
     @Mock
