@@ -12,7 +12,7 @@ import com.globant.counter.utils.bus.observer.OnCalculatorNumberButtonPressedBus
 import kotlinx.android.synthetic.main.activity_main.*
 
 
-open class CountView(activity: Activity) : ActivityView(activity) {
+class CountView(activity: Activity) : ActivityView(activity) {
     fun setExpression(expression: String) {
         activity?.textExpression?.text = expression
     }
