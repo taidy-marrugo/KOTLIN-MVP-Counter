@@ -20,25 +20,25 @@ open class CountView(activity: Activity) : ActivityView(activity) {
     init {
         activity.btnSum.setOnClickListener {
             getInput()
-            RxBus.post(OnCalculatorActionItemPressedBusObserver.OnCalculatorActionButtonPressed(CalculatorItem.SUMA))
+            RxBus.post(OnCalculatorActionItemPressedBusObserver.OnCalculatorActionButtonPressed(CalculatorItem.ADDITION))
 
         }
 
         activity.btnDiv.setOnClickListener {
             getInput()
-            RxBus.post(OnCalculatorActionItemPressedBusObserver.OnCalculatorActionButtonPressed(CalculatorItem.DIVS))
+            RxBus.post(OnCalculatorActionItemPressedBusObserver.OnCalculatorActionButtonPressed(CalculatorItem.DIVISION))
 
         }
 
         activity.btnMulti.setOnClickListener {
             getInput()
-            RxBus.post(OnCalculatorActionItemPressedBusObserver.OnCalculatorActionButtonPressed(CalculatorItem.MULTIP))
+            RxBus.post(OnCalculatorActionItemPressedBusObserver.OnCalculatorActionButtonPressed(CalculatorItem.MULTIPLICATION))
 
         }
 
         activity.btnRest.setOnClickListener {
             getInput()
-            RxBus.post(OnCalculatorActionItemPressedBusObserver.OnCalculatorActionButtonPressed(CalculatorItem.RESTA))
+            RxBus.post(OnCalculatorActionItemPressedBusObserver.OnCalculatorActionButtonPressed(CalculatorItem.SUBSTRACTION))
 
         }
 

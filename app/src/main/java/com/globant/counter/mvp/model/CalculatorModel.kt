@@ -39,10 +39,10 @@ open class CalculatorModel {
         }
 
         value1 = when (action) {
-            CalculatorItem.DIVS -> (if (value2 != 0.0F) value1 / value2 else 0.0F)
-            CalculatorItem.MULTIP -> value1 * value2
-            CalculatorItem.RESTA -> value1 - value2
-            CalculatorItem.SUMA -> value1 + value2
+            CalculatorItem.DIVISION -> (if (value2 != 0.0F) value1 / value2 else 0.0F)
+            CalculatorItem.MULTIPLICATION -> value1 * value2
+            CalculatorItem.SUBSTRACTION -> value1 - value2
+            CalculatorItem.ADDITION -> value1 + value2
             else -> 0.0F
         }
         value2 = 0.0F

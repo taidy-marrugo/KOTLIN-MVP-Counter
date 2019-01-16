@@ -1,7 +1,8 @@
 package com.globant.counter
 
 
-import com.globant.counter.mvp.model.CalculatorITEM
+
+import com.globant.counter.mvp.model.CalculatorItem
 import com.globant.counter.mvp.model.CalculatorModel
 import org.junit.After
 import org.junit.Assert
@@ -14,7 +15,7 @@ class ModelUnitTest {
     @Test
     fun getSumaTest() {
         model.setOperator(5.0f)
-        model.action = CalculatorITEM.SUMA
+        model.action = CalculatorItem.ADDITION
         model.setOperator(3.0f)
 
         Assert.assertEquals(model.getResult(), "8.0")
@@ -24,7 +25,7 @@ class ModelUnitTest {
     @Test
     fun getRestTest() {
         model.setOperator(12.0f)
-        model.action = CalculatorITEM.RESTA
+        model.action = CalculatorItem.SUBSTRACTION
         model.setOperator(2.0f)
 
         Assert.assertEquals(model.getResult(), "10.0")
@@ -34,7 +35,7 @@ class ModelUnitTest {
     @Test
     fun getMultTest() {
         model.setOperator(2.0f)
-        model.action = CalculatorITEM.MULTIP
+        model.action = CalculatorItem.MULTIPLICATION
         model.setOperator(2.0f)
 
         Assert.assertEquals(model.getResult(), "4.0")
@@ -44,7 +45,7 @@ class ModelUnitTest {
     @Test
     fun getDivTest() {
         model.setOperator(10.0f)
-        model.action = CalculatorITEM.DIVS
+        model.action = CalculatorItem.DIVISION
         model.setOperator(2.0f)
 
         Assert.assertEquals(model.getResult(), "5.0")

@@ -1,6 +1,6 @@
 package com.globant.counter
 
-import com.globant.counter.mvp.model.CalculatorITEM
+import com.globant.counter.mvp.model.CalculatorItem
 import com.globant.counter.mvp.model.CalculatorModel
 import com.globant.counter.mvp.model.CountModel
 import com.globant.counter.mvp.presenter.CountPresenter
@@ -41,12 +41,12 @@ class PresenterTest {
 
     fun `when plus is pressed, sum the inputs and return the right sum`() {
         RxBus.post(OnCalculatorNumberButtonPressedBusObserver.OnCalculatorNumberButtonPressed(7.0f))
-        RxBus.post(OnCalculatorActionItemPressedBusObserver.OnCalculatorActionButtonPressed(CalculatorITEM.SUMA))
+        RxBus.post(OnCalculatorActionItemPressedBusObserver.OnCalculatorActionButtonPressed(CalculatorItem.ADDITION))
         verify(view, times(1)).setExpression("7.0 +")
 
         RxBus.post(OnCalculatorNumberButtonPressedBusObserver.OnCalculatorNumberButtonPressed(5.0f))
 
-        assertEquals(model?.action, CalculatorITEM.SUMA)
+        assertEquals(model?.action, CalculatorItem.ADDITION)
 
         RxBus.post(OnCalculatorEqualButtonPressedBusObserver.OnCalculatorEqualButtonPressed())
 
@@ -58,12 +58,12 @@ class PresenterTest {
     @Test
     fun `when substraction is pressed, substracts the inputs and return the right rest`() {
         RxBus.post(OnCalculatorNumberButtonPressedBusObserver.OnCalculatorNumberButtonPressed(10.0f))
-        RxBus.post(OnCalculatorActionItemPressedBusObserver.OnCalculatorActionButtonPressed(CalculatorITEM.RESTA))
+        RxBus.post(OnCalculatorActionItemPressedBusObserver.OnCalculatorActionButtonPressed(CalculatorItem.SUBSTRACTION))
         verify(view, times(1)).setExpression("10.0 -")
 
         RxBus.post(OnCalculatorNumberButtonPressedBusObserver.OnCalculatorNumberButtonPressed(3.0f))
 
-        assertEquals(model?.action,CalculatorITEM.RESTA)
+        assertEquals(model?.action,CalculatorItem.SUBSTRACTION)
 
         RxBus.post(OnCalculatorEqualButtonPressedBusObserver.OnCalculatorEqualButtonPressed())
 
@@ -75,12 +75,12 @@ class PresenterTest {
     @Test
     fun `when multiplier is pressed, multiply the inputs and return the right multiplication`() {
         RxBus.post(OnCalculatorNumberButtonPressedBusObserver.OnCalculatorNumberButtonPressed(7.0f))
-        RxBus.post(OnCalculatorActionItemPressedBusObserver.OnCalculatorActionButtonPressed(CalculatorITEM.MULTIP))
+        RxBus.post(OnCalculatorActionItemPressedBusObserver.OnCalculatorActionButtonPressed(CalculatorItem.MULTIPLICATION))
         verify(view, times(1)).setExpression("7.0 *")
 
         RxBus.post(OnCalculatorNumberButtonPressedBusObserver.OnCalculatorNumberButtonPressed(4.0f))
 
-        assertEquals(model?.action, CalculatorITEM.MULTIP)
+        assertEquals(model?.action, CalculatorItem.MULTIPLICATION)
 
         RxBus.post(OnCalculatorEqualButtonPressedBusObserver.OnCalculatorEqualButtonPressed())
 
@@ -92,12 +92,12 @@ class PresenterTest {
     @Test
     fun `when division is pressed, divide the inputs and return the right division`() {
         RxBus.post(OnCalculatorNumberButtonPressedBusObserver.OnCalculatorNumberButtonPressed(25.0f))
-        RxBus.post(OnCalculatorActionItemPressedBusObserver.OnCalculatorActionButtonPressed(CalculatorITEM.DIVS))
+        RxBus.post(OnCalculatorActionItemPressedBusObserver.OnCalculatorActionButtonPressed(CalculatorItem.DIVISION))
         verify(view, times(1)).setExpression("25.0 /")
 
         RxBus.post(OnCalculatorNumberButtonPressedBusObserver.OnCalculatorNumberButtonPressed(5.0f))
 
-        assertEquals(model?.action, CalculatorITEM.DIVS)
+        assertEquals(model?.action, CalculatorItem.DIVISION)
 
         RxBus.post(OnCalculatorEqualButtonPressedBusObserver.OnCalculatorEqualButtonPressed())
 
