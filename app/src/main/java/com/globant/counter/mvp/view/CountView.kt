@@ -55,7 +55,7 @@ open class CountView(activity: Activity) : ActivityView(activity) {
 
     private fun getInput() {
         var input = activity?.inputNumber?.text.toString()
-        if (!TextUtils.isEmpty(input)) {
+        if (!input.isNullOrEmpty()) {
             RxBus.post(OnCalculatorNumberButtonPressedBusObserver.OnCalculatorNumberButtonPressed(input.toFloat()))
         }
         activity?.inputNumber?.setText("")
