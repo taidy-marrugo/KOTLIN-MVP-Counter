@@ -9,7 +9,7 @@ import com.globant.counter.mvp.view.CountView
 import com.globant.counter.utils.bus.RxBus
 
 
-open class MainActivity : AppCompatActivity() {
+ class MainActivity : AppCompatActivity() {
 
     private var presenter: CountPresenter? = null
 
