@@ -39,7 +39,7 @@ class PresenterTest {
 
     @Test
 
-    fun sumaTest() {
+    fun `when plus is pressed, sum the inputs and return the right sum`() {
         RxBus.post(OnCalculatorNumberButtonPressedBusObserver.OnCalculatorNumberButtonPressed(7.0f))
         RxBus.post(OnCalculatorActionItemPressedBusObserver.OnCalculatorActionButtonPressed(CalculatorITEM.SUMA))
         verify(view, times(1)).setExpression("7.0 +")
@@ -56,7 +56,7 @@ class PresenterTest {
     }
 
     @Test
-    fun restaTest() {
+    fun `when substraction is pressed, substracts the inputs and return the right rest`() {
         RxBus.post(OnCalculatorNumberButtonPressedBusObserver.OnCalculatorNumberButtonPressed(10.0f))
         RxBus.post(OnCalculatorActionItemPressedBusObserver.OnCalculatorActionButtonPressed(CalculatorITEM.RESTA))
         verify(view, times(1)).setExpression("10.0 -")
@@ -73,7 +73,7 @@ class PresenterTest {
     }
 
     @Test
-    fun multiOperationTest() {
+    fun `when multiplier is pressed, multiply the inputs and return the right multiplication`() {
         RxBus.post(OnCalculatorNumberButtonPressedBusObserver.OnCalculatorNumberButtonPressed(7.0f))
         RxBus.post(OnCalculatorActionItemPressedBusObserver.OnCalculatorActionButtonPressed(CalculatorITEM.MULTIP))
         verify(view, times(1)).setExpression("7.0 *")
@@ -90,7 +90,7 @@ class PresenterTest {
     }
 
     @Test
-    fun divOperationTest() {
+    fun `when division is pressed, divide the inputs and return the right division`() {
         RxBus.post(OnCalculatorNumberButtonPressedBusObserver.OnCalculatorNumberButtonPressed(25.0f))
         RxBus.post(OnCalculatorActionItemPressedBusObserver.OnCalculatorActionButtonPressed(CalculatorITEM.DIVS))
         verify(view, times(1)).setExpression("25.0 /")
