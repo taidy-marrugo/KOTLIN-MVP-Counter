@@ -2,12 +2,12 @@ package com.globant.counter.mvp.model
 
 open class CalculatorModel {
 
-    var action: CalculatorITEM = CalculatorITEM.EMPTY_ITEM
+    var action: CalculatorItem = CalculatorItem.EMPTY_ITEM
     var value1: Float = 0.0F
     var value2: Float = 0.0F
 
     fun setOperator(value: Float) {
-        if (action == CalculatorITEM.EMPTY_ITEM) {
+        if (action == CalculatorItem.EMPTY_ITEM) {
             value1 = value
         } else {
             value2 = value
@@ -27,27 +27,27 @@ open class CalculatorModel {
     }
 
     fun clear() {
-        action = CalculatorITEM.EMPTY_ITEM
+        action = CalculatorItem.EMPTY_ITEM
         value1 = 0.0F
         value2 = 0.0F
     }
 
     @Throws(IllegalStateException::class)
     private fun operate(): Float {
-        if (action == CalculatorITEM.EMPTY_ITEM) {
+        if (action == CalculatorItem.EMPTY_ITEM) {
             throw IllegalStateException()
         }
 
         value1 = when (action) {
-            CalculatorITEM.DIVS -> (if (value2 != 0.0F) value1 / value2 else 0.0F)
-            CalculatorITEM.MULTIP -> value1 * value2
-            CalculatorITEM.RESTA -> value1 - value2
-            CalculatorITEM.SUMA -> value1 + value2
+            CalculatorItem.DIVS -> (if (value2 != 0.0F) value1 / value2 else 0.0F)
+            CalculatorItem.MULTIP -> value1 * value2
+            CalculatorItem.RESTA -> value1 - value2
+            CalculatorItem.SUMA -> value1 + value2
             else -> 0.0F
         }
         value2 = 0.0F
 
-        action = CalculatorITEM.EMPTY_ITEM
+        action = CalculatorItem.EMPTY_ITEM
         return value1
 
     }

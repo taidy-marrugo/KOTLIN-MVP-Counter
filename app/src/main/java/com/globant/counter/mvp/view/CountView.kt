@@ -3,7 +3,7 @@ package com.globant.counter.mvp.view
 
 import android.app.Activity
 import android.text.TextUtils
-import com.globant.counter.mvp.model.CalculatorITEM
+import com.globant.counter.mvp.model.CalculatorItem
 import com.globant.counter.utils.bus.RxBus
 import com.globant.counter.utils.bus.observer.OnCalculatorActionItemPressedBusObserver
 import com.globant.counter.utils.bus.observer.OnCalculatorClearButtonPressedBusObserver
@@ -20,25 +20,25 @@ open class CountView(activity: Activity) : ActivityView(activity) {
     init {
         activity.btnSum.setOnClickListener {
             getInput()
-            RxBus.post(OnCalculatorActionItemPressedBusObserver.OnCalculatorActionButtonPressed(CalculatorITEM.SUMA))
+            RxBus.post(OnCalculatorActionItemPressedBusObserver.OnCalculatorActionButtonPressed(CalculatorItem.SUMA))
 
         }
 
         activity.btnDiv.setOnClickListener {
             getInput()
-            RxBus.post(OnCalculatorActionItemPressedBusObserver.OnCalculatorActionButtonPressed(CalculatorITEM.DIVS))
+            RxBus.post(OnCalculatorActionItemPressedBusObserver.OnCalculatorActionButtonPressed(CalculatorItem.DIVS))
 
         }
 
         activity.btnMulti.setOnClickListener {
             getInput()
-            RxBus.post(OnCalculatorActionItemPressedBusObserver.OnCalculatorActionButtonPressed(CalculatorITEM.MULTIP))
+            RxBus.post(OnCalculatorActionItemPressedBusObserver.OnCalculatorActionButtonPressed(CalculatorItem.MULTIP))
 
         }
 
         activity.btnRest.setOnClickListener {
             getInput()
-            RxBus.post(OnCalculatorActionItemPressedBusObserver.OnCalculatorActionButtonPressed(CalculatorITEM.RESTA))
+            RxBus.post(OnCalculatorActionItemPressedBusObserver.OnCalculatorActionButtonPressed(CalculatorItem.RESTA))
 
         }
 
