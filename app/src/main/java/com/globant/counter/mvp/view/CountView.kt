@@ -14,56 +14,56 @@ import kotlinx.android.synthetic.main.activity_main.*
 
 open class CountView(activity: Activity) : ActivityView(activity) {
     fun setExpression(expression: String) {
-        activity?.text_expression?.text = expression
+        activity?.textExpression?.text = expression
     }
 
     init {
-        activity.btn_sum.setOnClickListener {
+        activity.btnSum.setOnClickListener {
             getInput()
             RxBus.post(OnCalculatorActionItemPressedBusObserver.OnCalculatorActionButtonPressed(CalculatorITEM.SUMA))
 
         }
 
-        activity.btn_div.setOnClickListener {
+        activity.btnDiv.setOnClickListener {
             getInput()
             RxBus.post(OnCalculatorActionItemPressedBusObserver.OnCalculatorActionButtonPressed(CalculatorITEM.DIVS))
 
         }
 
-        activity.btn_multi.setOnClickListener {
+        activity.btnMulti.setOnClickListener {
             getInput()
             RxBus.post(OnCalculatorActionItemPressedBusObserver.OnCalculatorActionButtonPressed(CalculatorITEM.MULTIP))
 
         }
 
-        activity.btn_rest.setOnClickListener {
+        activity.btnRest.setOnClickListener {
             getInput()
             RxBus.post(OnCalculatorActionItemPressedBusObserver.OnCalculatorActionButtonPressed(CalculatorITEM.RESTA))
 
         }
 
-        activity.btn_equal.setOnClickListener {
+        activity.btnEqual.setOnClickListener {
             getInput()
             RxBus.post(OnCalculatorEqualButtonPressedBusObserver.OnCalculatorEqualButtonPressed())
         }
 
-        activity.btn_clear.setOnClickListener {
+        activity.btnClear.setOnClickListener {
             RxBus.post(OnCalculatorClearButtonPressedBusObserver.OnCalculatorClearButton())
         }
 
     }
 
     private fun getInput() {
-        var input = activity?.input_number?.text.toString()
+        var input = activity?.inputNumber?.text.toString()
         if (!TextUtils.isEmpty(input)) {
             RxBus.post(OnCalculatorNumberButtonPressedBusObserver.OnCalculatorNumberButtonPressed(input.toFloat()))
         }
-        activity?.input_number?.setText("")
+        activity?.inputNumber?.setText("")
     }
 
     fun clear() {
-        activity?.input_number?.setText("")
-        activity?.text_expression?.text = ""
+        activity?.inputNumber?.setText("")
+        activity?.textExpression?.text = ""
     }
 
 }

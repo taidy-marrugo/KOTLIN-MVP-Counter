@@ -6,7 +6,7 @@
     android:gravity="center_horizontal"
     android:orientation="vertical">
     <TextView
-        android:id="@+id/text_expression"
+        android:id="@+id/textExpression"
 
         android:hint="@string/values"
 
@@ -16,7 +16,7 @@
 
 
     <EditText
-        android:id="@+id/input_number"
+        android:id="@+id/inputNumber"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:inputType="numberDecimal" />
@@ -30,38 +30,38 @@
     >
 
     <Button
-        android:id="@+id/btn_sum"
+        android:id="@+id/btnSum"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/plus" />
 
     <Button
-        android:id="@+id/btn_rest"
+        android:id="@+id/btnRest"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/minus" />
 
     <Button
-        android:id="@+id/btn_multi"
+        android:id="@+id/btnMulti"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/multiplication" />
 
     <Button
-        android:id="@+id/btn_div"
+        android:id="@+id/btnDiv"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/division" />
 
 
     <Button
-        android:id="@+id/btn_clear"
+        android:id="@+id/btnClear"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/clear" />
 
     <Button
-        android:id="@+id/btn_equal"
+        android:id="@+id/btnEqual"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/equal" />
