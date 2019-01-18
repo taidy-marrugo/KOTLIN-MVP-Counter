@@ -14,17 +14,15 @@ package com.globant.counter.mvp.model
         }
     }
 
-    fun getExpression(): String {
-        return "$value1 ${action.value}"
-    }
+     val getExpression
+         get() = "$value1 ${action.value}"
 
-    fun getResult(): String {
-        try {
-            return "${operate()}"
-        } catch (e: IllegalStateException) {
-            return "$value1"
-        }
-    }
+     val getResult
+         get() = try {
+              "${operate()}"
+         } catch (e: IllegalStateException) {
+              "$value1"
+         }
 
     fun clear() {
         action = CalculatorItem.EMPTY_ITEM

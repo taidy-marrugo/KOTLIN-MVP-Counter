@@ -17,20 +17,20 @@ open class CountPresenter(model: CalculatorModel, view: CountView) {
             RxBus.subscribe(activity, object : OnCalculatorActionItemPressedBusObserver() {
                 override fun onEvent(value: OnCalculatorActionButtonPressed) {
                     model.action = value.action
-                    view.setExpression(model.getExpression())
+                    view.setExpression(model.getExpression)
                 }
             })
 
             RxBus.subscribe(activity, object : OnCalculatorNumberButtonPressedBusObserver() {
                 override fun onEvent(value: OnCalculatorNumberButtonPressed) {
                     model.setOperator(value.number)
-                    view.setExpression(model.getExpression())
+                    view.setExpression(model.getExpression)
                 }
             })
 
             RxBus.subscribe(activity, object : OnCalculatorEqualButtonPressedBusObserver() {
                 override fun onEvent(value: OnCalculatorEqualButtonPressed) {
-                    view.setExpression(model.getResult())
+                    view.setExpression(model.getResult)
                 }
             })
 
