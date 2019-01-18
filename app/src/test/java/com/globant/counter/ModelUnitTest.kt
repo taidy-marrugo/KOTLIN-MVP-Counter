@@ -51,6 +51,4 @@ class ModelUnitTest {
         Assert.assertEquals(model.getResult(), "5.0")
         Assert.assertEquals(model.getExpression(), "5.0 ")
     }
-
-
 }
