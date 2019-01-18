@@ -19,27 +19,19 @@ class CountView(activity: Activity) : ActivityView(activity) {
 
     init {
         activity.btnSum.setOnClickListener {
-            getInput()
-            RxBus.post(OnCalculatorActionItemPressedBusObserver.OnCalculatorActionButtonPressed(CalculatorItem.ADDITION))
-
+            postOperation(CalculatorItem.ADDITION)
         }
 
         activity.btnDiv.setOnClickListener {
-            getInput()
-            RxBus.post(OnCalculatorActionItemPressedBusObserver.OnCalculatorActionButtonPressed(CalculatorItem.DIVISION))
-
+            postOperation(CalculatorItem.DIVISION)
         }
 
         activity.btnMulti.setOnClickListener {
-            getInput()
-            RxBus.post(OnCalculatorActionItemPressedBusObserver.OnCalculatorActionButtonPressed(CalculatorItem.MULTIPLICATION))
-
+            postOperation(CalculatorItem.MULTIPLICATION)
         }
 
         activity.btnRest.setOnClickListener {
-            getInput()
-            RxBus.post(OnCalculatorActionItemPressedBusObserver.OnCalculatorActionButtonPressed(CalculatorItem.SUBSTRACTION))
-
+            postOperation(CalculatorItem.SUBSTRACTION)
         }
 
         activity.btnEqual.setOnClickListener {
@@ -65,5 +57,8 @@ class CountView(activity: Activity) : ActivityView(activity) {
         activity?.inputNumber?.setText("")
         activity?.textExpression?.text = ""
     }
-
+    private fun postOperation(operation: CalculatorItem) {
+        getInput()
+        RxBus.post(OnCalculatorActionItemPressedBusObserver.OnCalculatorActionButtonPressed(operation))
+    }
 }
