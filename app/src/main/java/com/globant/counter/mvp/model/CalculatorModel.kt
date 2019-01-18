@@ -1,6 +1,6 @@
 package com.globant.counter.mvp.model
 
-open class CalculatorModel {
+ class CalculatorModel {
 
     var action: CalculatorItem = CalculatorItem.EMPTY_ITEM
     var value1: Float = 0.0F
