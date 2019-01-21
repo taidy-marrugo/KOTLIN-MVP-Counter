@@ -3,6 +3,7 @@ package com.globant.counter.mvp.view
 
 import android.app.Activity
 import android.text.TextUtils
+import com.globant.counter.R
 import com.globant.counter.mvp.model.CalculatorItem
 import com.globant.counter.utils.bus.RxBus
 import com.globant.counter.utils.bus.observer.OnCalculatorActionItemPressedBusObserver
@@ -50,12 +51,12 @@ class CountView(activity: Activity) : ActivityView(activity) {
         if (!input.isNullOrEmpty()) {
             RxBus.post(OnCalculatorNumberButtonPressedBusObserver.OnCalculatorNumberButtonPressed(input.toFloat()))
         }
-        activity?.inputNumber?.setText("")
+        activity?.inputNumber?.setText(activity?.getString(R.string.empty_string))
     }
 
     fun clear() {
-        activity?.inputNumber?.setText("")
-        activity?.textExpression?.text = ""
+        activity?.inputNumber?.setText(activity?.getString(R.string.empty_string))
+        activity?.textExpression?.text = activity?.getString(R.string.empty_string)
     }
     private fun postOperation(operation: CalculatorItem) {
         getInput()

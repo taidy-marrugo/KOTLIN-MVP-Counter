@@ -7,4 +7,5 @@
     <string name="division">/</string>
     <string name="clear">C</string>
     <string name="equal">=</string>
+    <string name="empty_string"></string>
 </resources>
