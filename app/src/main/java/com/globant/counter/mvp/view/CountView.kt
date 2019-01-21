@@ -2,25 +2,64 @@ package com.globant.counter.mvp.view
 
 
 import android.app.Activity
+import android.text.TextUtils
+import com.globant.counter.R
+import com.globant.counter.mvp.model.CalculatorItem
 import com.globant.counter.utils.bus.RxBus
-import com.globant.counter.utils.bus.observer.OnCountButtonPressedBusObserver
-import com.globant.counter.utils.bus.observer.OnResetButtonPressedBusObserver
+import com.globant.counter.utils.bus.observer.OnCalculatorActionItemPressedBusObserver
+import com.globant.counter.utils.bus.observer.OnCalculatorClearButtonPressedBusObserver
+import com.globant.counter.utils.bus.observer.OnCalculatorEqualButtonPressedBusObserver
+import com.globant.counter.utils.bus.observer.OnCalculatorNumberButtonPressedBusObserver
 import kotlinx.android.synthetic.main.activity_main.*
 
 
 class CountView(activity: Activity) : ActivityView(activity) {
-
-    init {
-        activity.count_button.setOnClickListener {
-            RxBus.post(OnCountButtonPressedBusObserver.OnCountButtonPressed())
-        }
-
-        activity.reset_button.setOnClickListener {
-            RxBus.post(OnResetButtonPressedBusObserver.OnResetButtonPressed())
-        }
+    fun setExpression(expression: String) {
+        activity?.textExpression?.text = expression
     }
 
-    fun setCount(count: String) {
-        activity!!.count_label.text = count
+    init {
+        activity.btnSum.setOnClickListener {
+            postOperation(CalculatorItem.ADDITION)
+        }
+
+        activity.btnDiv.setOnClickListener {
+            postOperation(CalculatorItem.DIVISION)
+        }
+
+        activity.btnMulti.setOnClickListener {
+            postOperation(CalculatorItem.MULTIPLICATION)
+        }
+
+        activity.btnRest.setOnClickListener {
+            postOperation(CalculatorItem.SUBSTRACTION)
+        }
+
+        activity.btnEqual.setOnClickListener {
+            getInput()
+            RxBus.post(OnCalculatorEqualButtonPressedBusObserver.OnCalculatorEqualButtonPressed())
+        }
+
+        activity.btnClear.setOnClickListener {
+            RxBus.post(OnCalculatorClearButtonPressedBusObserver.OnCalculatorClearButton())
+        }
+
+    }
+
+    private fun getInput() {
+        var input = activity?.inputNumber?.text.toString()
+        if (!input.isNullOrEmpty()) {
+            RxBus.post(OnCalculatorNumberButtonPressedBusObserver.OnCalculatorNumberButtonPressed(input.toFloat()))
+        }
+        activity?.inputNumber?.setText(activity?.getString(R.string.empty_string))
+    }
+
+    fun clear() {
+        activity?.inputNumber?.setText(activity?.getString(R.string.empty_string))
+        activity?.textExpression?.text = activity?.getString(R.string.empty_string)
+    }
+    private fun postOperation(operation: CalculatorItem) {
+        getInput()
+        RxBus.post(OnCalculatorActionItemPressedBusObserver.OnCalculatorActionButtonPressed(operation))
     }
 }

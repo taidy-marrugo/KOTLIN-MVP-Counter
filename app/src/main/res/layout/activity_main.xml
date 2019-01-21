@@ -1,29 +1,61 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout
-    android:id="@+id/activity_main"
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:gravity="center"
+    android:gravity="center_horizontal"
     android:orientation="vertical">
 
     <TextView
-        android:id="@+id/count_label"
-        android:layout_width="wrap_content"
-        android:textSize="40sp"
+        android:id="@+id/textExpression"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="0"/>
+        android:hint="@string/values" />
+
+    <EditText
+        android:id="@+id/inputNumber"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:inputType="numberDecimal" />
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical" />
 
     <Button
-        android:id="@+id/count_button"
+        android:id="@+id/btnSum"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="inc"/>
+        android:text="@string/plus" />
 
     <Button
-        android:id="@+id/reset_button"
+        android:id="@+id/btnRest"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="reset"/>
+        android:text="@string/minus" />
 
+    <Button
+        android:id="@+id/btnMulti"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/multiplication" />
+
+    <Button
+        android:id="@+id/btnDiv"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/division" />
+
+    <Button
+        android:id="@+id/btnClear"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/clear" />
+
+    <Button
+        android:id="@+id/btnEqual"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/equal" />
 </LinearLayout>
